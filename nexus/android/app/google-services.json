@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "543824000886",
+    "project_id": "nexus-beings",
+    "storage_bucket": "nexus-beings.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:543824000886:android:467e695b6a2e8d8481ac57",
+        "android_client_info": {
+          "package_name": "com.nexus"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAUyuKDnYIFzz5IscVPcS5wN4UteKTGCmM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
