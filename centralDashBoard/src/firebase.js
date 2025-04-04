@@ -4,22 +4,22 @@ import {
   getMessaging,
   getToken,
   onMessage,
-  requestPermission,
 } from "firebase/messaging";
 import toast from "react-hot-toast";
 import { TiWarningOutline } from "react-icons/ti";
 
+// Load environment variables
 const firebaseConfig = {
-  apiKey: "AIzaSyBRIKhGqmYlKOQ8woS2khCx9NgVJ8GnOtM",
-  authDomain: "nexus-beings.firebaseapp.com",
-  projectId: "nexus-beings",
-  storageBucket: "nexus-beings.firebasestorage.app",
-  messagingSenderId: "543824000886",
-  appId: "1:543824000886:web:0e21101b3a8093f881ac57",
-  measurementId: "G-YFSQHG8V9N",
+  apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
+  authDomain: process.env.REACT_APP_FIREBASE_AUTH_DOMAIN,
+  projectId: process.env.REACT_APP_FIREBASE_PROJECT_ID,
+  storageBucket: process.env.REACT_APP_FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: process.env.REACT_APP_FIREBASE_MESSAGING_SENDER_ID,
+  appId: process.env.REACT_APP_FIREBASE_APP_ID,
+  measurementId: process.env.REACT_APP_FIREBASE_MEASUREMENT_ID,
 };
-let YOUR_VAPID_KEY =
-  "BIw-cPoIZlDPG7ouau-2tw_56uS4SYYPhOIYSSV-Whi9LjCRQyCmp1rKcwE_nbu_RWDE5qbx5tAe1vHGos3rYIc";
+const YOUR_VAPID_KEY = process.env.REACT_APP_FIREBASE_VAPID_KEY;
+
 const app = initializeApp(firebaseConfig);
 const messaging = getMessaging(app);
 
@@ -63,6 +63,7 @@ export const requestNotificationPermission = async () => {
     return false;
   }
 };
+
 const CustomToast = ({ title, body }) => (
   <div>
     <div className="text-xl font-semibold">{title}</div> 
@@ -82,22 +83,10 @@ const handleToggleTheme = (title, body ) => {
       },
     }
   );
-  //   toast(`Theme changed to ${theme === "light" ? "Dark" : "Light"} mode!`, {
-  //     icon: `${theme === "light" ? "🌙" : "☀️"}`,
-  //     style: {
-  //       borderRadius: "10px",
-  //       background: `${theme === "light" ? "#333" : "#fff"} `,
-  //       color: `${theme === "light" ? "#fff" : "#333"}`,
-  //     },
-  //   });
 };
 
-// Listener for messages
-// onMessage(messaging, (payload) => {
-//   console.log("Message received: ", payload);
-//   handleToggleTheme(payload.notification.title, payload.notification.body);
-//   setTimeout(() => { window.location.reload(); }, 2000);
-// });
-
-// fxx2dmF0bPIUrYbCCo1vRm:APA91bFIIexCOShjB-k7KfexCB7ylS0kmLS5qd2vPbHFajw00CKTsVA7lGt22e6caGLYSybqd6xSeL_AYRvUJEBr38SAbS70WtLBQRuvnh-5o_3O_T9ENSg
-//---varun edge---
+onMessage(messaging, (payload) => {
+  console.log("Message received: ", payload);
+  handleToggleTheme(payload.notification.title, payload.notification.body);
+  setTimeout(() => { window.location.reload(); }, 2000);
+});

@@ -26,11 +26,11 @@ function Sidebar() {
       url: "/reportMissingPerson",
       icon: <TbReportSearch className="text-xl" />,
     },
-    // {
-    //   name: "Report Status",
-    //   url: "/missingPersonList",
-    //   icon: <HiOutlineStatusOnline className="text-xl" />,
-    // },
+    {
+      name: "Report Status",
+      url: "/missingPersonList",
+      icon: <HiOutlineStatusOnline className="text-xl" />,
+    },
     // {
     //   name: "Object Detection",
     //   url: "/objectDetection",
@@ -42,7 +42,7 @@ function Sidebar() {
       icon: <TbShoppingBagExclamation className="text-xl" />,
     },
     {
-      name: "Records",
+      name: "Police Records",
       url: "/policeReg",
       icon: <MdOutlineLocalPolice className="text-xl" />,
     },
@@ -52,12 +52,12 @@ function Sidebar() {
       <div className="flex justify-between items-center border-b-2 border-gray-300 p-2">
         <div className=" mx-2">
           <div className="text-2xl font-bold">Dashboard</div>
-          <div className="text-sm font-light">IIIT LUCKNOW</div>
+          <div className="text-sm font-light">Madhya Pradesh Police</div>
         </div>
-        {/* <div className="flex">
+        <div className="flex">
           <img src={MP_GOV_LOGO} alt="logo" className="w-16" />
           <img src={MP_POLICE_LOGO} alt="logo" className="w-16" />
-        </div> */}
+        </div>
       </div>
       <div className="w-full p-2 flex-1 text-lg font-semibold">
         {links.map((link, index) => (
