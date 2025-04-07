@@ -1,0 +1,4 @@
+Django>=4.0
+opencv-python
+numpy
+tensorflow>=2.0
