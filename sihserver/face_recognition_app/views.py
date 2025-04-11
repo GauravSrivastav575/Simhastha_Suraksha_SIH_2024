@@ -1,14 +1,4 @@
-# from django.http import JsonResponse
-# import json
-# from django.views.decorators.csrf import csrf_exempt
-# from threading import Thread
-# import cv2
-# import face_recognition
-# import numpy as np
-# from PIL import Image
-# import requests
-# import asyncio
-# import time
+
 
 # database = {
 #     "6jbhush87njeu8" : {"name":"Pratham","url":"https://res.cloudinary.com/dcbrfuldz/image/upload/v1732727490/YelpCamp/coehrxur5ohi2tcstkrx.jpg"},
