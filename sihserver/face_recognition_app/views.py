@@ -18,10 +18,7 @@ import cloudinary.uploader
 from django.views.decorators.http import require_http_methods
 
 database = {
-    # "675960bf0c21716935e3b79d" : {"name":"Gaurav","url":"https://res.cloudinary.com/dcbrfuldz/image/upload/v1733910719/YelpCamp/3474ce1a9d78cecbe3f5fcb2c0d178b1_mc6pms.jpg"},
-    # "182egh198fv913g9g193g3gd" : {"name":"Nikita","url":"https://res.cloudinary.com/ddv1qs3by/image/upload/v1733985536/Detected_faces/l2gfousq5at5d3eoyhi4.jpg"}
-    # "6jbhush87bdgdknk8":{ "name":"Gaurav",
-    #      "url":"https://res.cloudinary.com/dcbrfuldz/image/upload/v1733052254/YelpCamp/c8ecfad01b21309551890fb7bbbf5aa9_pqfea5.jpg"}
+    # "unique_key" : {"name": "","url":"cloudinary_link"}
 }
 cloudinary.config(
     cloud_name="",
@@ -29,14 +26,10 @@ cloudinary.config(
     api_secret=""
 )
 
-    # List of camera IDs or IP URLs//675a9310f66b18c8e096d8c4
+ # List of camera IDs or IP URLs//675a9310f66b18c8e096d8c4
 cameras = [{"name": 'CAM1', "url": "http://192.168.137.167:4747/video", "camId": '674c39e06bbf9f8c18ad1ef0'}]
 
-# for report in response["data"]:
-            #     database[report._id] = {
-            #         "name":report.name,
-            #         "url":report.url,
-            #     }
+
 
 @csrf_exempt
 def getCheck(request):
@@ -56,7 +49,7 @@ def get_missing_person_request(request):
         try:
             # Sending the GET request to the Node server
             response = requests.get(url)
-            # print(response)
+          
             # Check if the request was successful
             if response.status_code == 200:
                 # Parse the response JSON
@@ -116,7 +109,7 @@ async def process_faces(database):
 @csrf_exempt
 async def add_face(request):
     if request.method == "GET":
-        return JsonResponse({"message": "HELLO Mr. GAURAV VISHWAKARMA JII"}, status=200)
+        return JsonResponse({"message": "HELLO Mr. user_name "}, status=200)
 
     elif request.method == "POST":
         print("api hitted")
